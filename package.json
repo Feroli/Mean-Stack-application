@@ -13,6 +13,7 @@
     "express": "^4.13.3",
     "express-logger": "0.0.3",
     "jade": "^1.11.0",
+    "mongoose": "^4.1.10",
     "morgan": "^1.6.1",
     "multer": "^1.0.6",
     "stylus": "^0.52.4"
