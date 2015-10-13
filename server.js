@@ -1,19 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var logger = require('morgan')
-var multer = require('multer');
-var upload = multer(); // for parsing multipart/form-data
-stylus = require('stylus');
-mongoose = require('mongoose');
+var logger = require('morgan');
+// var multer = require('multer');
+// var upload = multer(); // for parsing multipart/form-data
+var stylus = require('stylus');
+var mongoose = require('mongoose');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
-function compile(str, path) {
+function compile (str, path) {
   return stylus(str).set('filename', path)
 }
-
 
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'jade');
@@ -34,7 +33,6 @@ if (env === 'development') {
   mongoose.connect('mongodb://localhost/multivision');
 } else {
   mongoose.connect('mongodb://fernando:multivision@ds035333.mongolab.com:35333/multivision');
-
 }
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error...'));
